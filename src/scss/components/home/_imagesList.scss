@@ -1,0 +1,21 @@
+@use '../../_variables.scss' as *;
+@use '../../_mixin.scss' as *;
+
+.images {
+    width: 90vw;
+    margin: 0 auto;
+    padding-top: 4vh;
+
+    &__container {
+        position: relative;
+        columns: 2 30vw;
+        column-gap: 10px;
+
+        &__imgs {
+            width: 100%;
+            margin-bottom: 5px;
+            border-radius: 12px;
+            box-shadow: 0 0 4px $shadows;
+        }
+    }
+}

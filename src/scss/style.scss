@@ -1,6 +1,8 @@
 @use '_variables.scss' as *;
 @use '_mixin.scss' as *;
 @use './components/common/header';
+@use './components/home/imagesList';
+@use './components/home/modal';
 
 * {
     margin: 0;
@@ -10,6 +12,7 @@
 
 body {
     background: $grey;
+    overflow-x: hidden;
 }
 
 h1 {

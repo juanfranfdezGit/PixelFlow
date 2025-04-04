@@ -65,7 +65,7 @@
   width: 85vw;
 }
 .search__tags {
-  padding-top: 8vh;
+  padding-top: 50px;
   width: 80vw;
   margin: 0 auto;
 }
@@ -85,6 +85,118 @@
   border-radius: 24px;
 }
 
+.images {
+  width: 90vw;
+  margin: 0 auto;
+  padding-top: 4vh;
+}
+.images__container {
+  position: relative;
+  columns: 2 30vw;
+  column-gap: 10px;
+}
+.images__container__imgs {
+  width: 100%;
+  margin-bottom: 5px;
+  border-radius: 12px;
+  box-shadow: 0 0 4px rgba(17, 17, 17, 0.6509803922);
+}
+
+.modal__back {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 4;
+  background: rgba(17, 17, 17, 0.6509803922);
+  display: none;
+}
+.modal__back.active {
+  display: block;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 5vh;
+  left: 5vw;
+  width: 90vw;
+  height: 90vh;
+  background: url(/assets/images/photo2.webp) center center/cover no-repeat;
+  z-index: 5;
+  border-radius: 12px;
+  padding: 1rem;
+  overflow: hidden;
+}
+.modal.active {
+  display: block;
+}
+.modal__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+.modal__top__tag {
+  background: #fdfdfd;
+  padding: 0 16px;
+  box-shadow: 0 0 15 rgba(17, 17, 17, 0.6509803922);
+  cursor: pointer;
+  border-radius: 24px;
+}
+.modal__top__close {
+  font-size: 1.7rem;
+  font-weight: 700;
+  line-height: 1.5rem;
+  color: #111;
+}
+.modal__bottom {
+  position: absolute;
+  bottom: -21.5vh;
+  left: 0;
+  padding: 0.5rem 1rem 1rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  transition: all 1s;
+}
+.modal__bottom.allow {
+  bottom: 0;
+  background: rgba(17, 17, 17, 0.6509803922);
+}
+.modal__bottom__arrow {
+  width: 60px;
+  filter: invert(1);
+  margin: 0 auto;
+  transition: all 1s;
+}
+.modal__bottom__arrow.allow {
+  transform: rotate(180deg);
+}
+.modal__bottom__description {
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.8rem;
+  color: #fdfdfd;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.modal__bottom__actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin: 10px auto;
+  gap: 12px;
+}
+.modal__bottom__actions img {
+  width: 36px;
+  margin-left: 4px;
+  filter: invert(1);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -93,6 +205,7 @@
 
 body {
   background: #f0f0f0;
+  overflow-x: hidden;
 }
 
 h1 {

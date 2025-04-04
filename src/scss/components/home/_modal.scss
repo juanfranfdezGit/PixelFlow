@@ -1,0 +1,94 @@
+@use '../../_variables.scss' as *;
+@use '../../_mixin.scss' as *;
+
+.modal__back {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 4;
+    background: $shadows;
+    display: none;
+
+    &.active {
+        display: block;
+    }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 5vh;
+    left: 5vw;
+    width: 90vw;
+    height: 90vh;
+    background: url(/assets/images/photo2.webp) center center / cover no-repeat;
+    z-index: 5;
+    border-radius: 12px;
+    padding: 1rem;
+    overflow: hidden;
+
+    &.active {
+        display: block;
+    }
+
+    &__top {
+        @include set-flex(space-between, center, row);
+
+        &__tag {
+            background: $white;
+            padding: 0 16px;
+            box-shadow: 0 0 15 $shadows;
+            cursor: pointer;
+            border-radius: 24px;
+        }
+
+        &__close {
+            @include fonts(1.7rem, 700, 1.5rem,$black)
+        }
+    }
+
+    &__bottom {
+        position: absolute;
+        bottom: -21.5vh;
+        left: 0;
+        padding: .5rem 1rem 1rem 1rem;
+        @include set-flex(center, flex-start, column);
+        transition: all 1s;
+
+        &.allow {
+            bottom: 0;
+            background: $shadows;
+        }
+
+        &__arrow {
+            width: 60px;
+            filter: invert(1);
+            margin: 0 auto;
+            transition: all 1s;
+
+            &.allow {
+                transform: rotate(180deg)
+            }
+        }
+
+        &__description {
+            @include fonts(1.2rem, 400, 1.8rem, $white);
+            margin-bottom: 1rem;
+            text-align: center
+        }
+
+        &__actions {
+            @include set-flex(center, center, row);
+            margin: 10px auto;
+            gap: 12px;
+
+            img {
+                width: 36px;
+                margin-left: 4px;
+                filter: invert(1);
+            }
+        }
+    }
+}

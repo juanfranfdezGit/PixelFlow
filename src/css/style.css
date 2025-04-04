@@ -1,0 +1,171 @@
+.navMenu {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  width: 100vw;
+  padding: 2rem;
+}
+.navMenu__logo {
+  color: #fdfdfd;
+}
+.navMenu__logo.dashboard {
+  color: #111;
+}
+.navMenu.dashboard {
+  background: #fdfdfd;
+  padding: 2rem 2rem 6rem 2rem;
+  box-shadow: 0 0 15px rgba(17, 17, 17, 0.6509803922);
+}
+
+.search {
+  padding-top: 25vh;
+  padding-bottom: 15vh;
+  background: url(/assets/images/headerBack.jfif) center center/cover no-repeat;
+}
+.search__title {
+  color: #fdfdfd;
+  text-align: center;
+}
+.search__bar {
+  position: relative;
+  margin: 8px auto;
+  width: 80vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  top: 26px;
+}
+.search__bar__ico {
+  position: absolute;
+  left: 8px;
+  z-index: 2;
+}
+.search__bar__label {
+  position: absolute;
+  left: 48px;
+  z-index: 2;
+  pointer-events: none;
+  transition: all 0.3s;
+}
+.search__bar__input {
+  position: absolute;
+  width: 100%;
+  padding: 8px 40px;
+  border-radius: 24px;
+}
+.search__bar__input:focus ~ .search__bar__label, .search__bar__input:not(:placeholder-shown) ~ .search__bar__label {
+  opacity: 0;
+}
+.search__bar.dashboard {
+  position: absolute;
+  top: 15vh;
+  width: 85vw;
+}
+.search__tags {
+  padding-top: 8vh;
+  width: 80vw;
+  margin: 0 auto;
+}
+.search__tags__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.search__tags__list__item {
+  background: #fdfdfd;
+  padding: 0 16px;
+  box-shadow: 0 0 15 rgba(17, 17, 17, 0.6509803922);
+  cursor: pointer;
+  border-radius: 24px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f0f0f0;
+}
+
+h1 {
+  font-family: "Irish Grover", system-ui;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1rem;
+  color: #111;
+}
+
+h2 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.8rem;
+  color: #111;
+}
+
+h3 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.8rem;
+  color: #111;
+}
+
+p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.8rem;
+  color: #111;
+}
+
+label {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.8rem;
+  color: #111;
+}
+
+a {
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.8rem;
+  color: #111;
+  text-decoration: none;
+}
+
+li {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+  color: #111;
+  list-style: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+button {
+  padding: 4px 20px;
+  border-radius: 24px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.5rem;
+  color: #111;
+  background: #fdfdfd;
+  box-shadow: 0 0 15px rgba(17, 17, 17, 0.6509803922);
+}
+
+/*# sourceMappingURL=style.css.map */

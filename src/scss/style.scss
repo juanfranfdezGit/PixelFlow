@@ -1,0 +1,62 @@
+@use '_variables.scss' as *;
+@use '_mixin.scss' as *;
+@use './components/common/header';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: $grey;
+}
+
+h1 {
+    font-family: "Irish Grover", system-ui;
+    @include fonts(32px, 600, 1rem, $black);
+}
+
+h2 {
+    font-family: "Open Sans", sans-serif;
+    @include fonts(26px, 700, 1.8rem, $black);
+}
+
+h3 {
+    font-family: "Open Sans", sans-serif;
+    @include fonts(22px, 600, 1.8rem, $black);
+}
+
+p {
+    font-family: "Open Sans", sans-serif;
+    @include fonts(18px, 600, 1.8rem, $black);
+}
+
+label {
+    font-family: "Open Sans", sans-serif;
+    @include fonts(14px, 400, 1.8rem, $black);
+}
+
+a {
+    font-family: "Open Sans", sans-serif;
+    @include fonts(18px, 600, 1.8rem, $black);
+    text-decoration: none;
+}
+
+li {
+    font-family: "Open Sans", sans-serif;
+    @include fonts(.8rem, 600, 1.5rem, $black);
+    list-style: none;
+}
+
+input:focus {
+    outline: none;
+}
+
+button {
+    padding: 4px 20px;
+    border-radius: 24px;
+    @include fonts(20px, 500, 1.5rem, $black);
+    background: $white;
+    box-shadow: 0 0 15px $shadows;
+}

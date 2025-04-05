@@ -1,2 +1,2 @@
 # PixelFlow
-images page with unsplash API
+images page with unsplash API. Academy project

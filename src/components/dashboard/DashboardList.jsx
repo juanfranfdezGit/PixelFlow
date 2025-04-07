@@ -18,7 +18,9 @@ export default function ImagesList() {
                     <div className="dashboardList__item__info">
                         <div className="dashboardList__item__info__description">
                             <h3 className="dashboardList__item__info__description__title">descripción</h3>
-                            <p className="dashboardList__item__info__description__desc">lorem efoamfoaemf alfk adfkafkldk lda afsf asf as asf</p>
+                            <p className="dashboardList__item__info__description__desc">lorem efoamfoaemf alfk adfkafkldk lda afsf asf as asf
+                            <img src="/assets/icos/edit.svg" alt="edit" />
+                            </p>
                         </div>
                         <div className="dashboardList__item__info__metadatas">
                             <h3 className="dashboardList__item__info__metadatas__title">guardado</h3>
@@ -45,7 +47,9 @@ export default function ImagesList() {
                     <div className="dashboardList__item__info">
                         <div className="dashboardList__item__info__description">
                             <h3 className="dashboardList__item__info__description__title">descripción</h3>
-                            <p className="dashboardList__item__info__description__desc">lorem efoamfoaemf alfk adfkafkldk lda afsf asf as asf</p>
+                            <p className="dashboardList__item__info__description__desc">lorem efoamfoaemf alfk adfkafkldk lda afsf asf as asf
+                                <img src="/assets/icos/edit.svg" alt="edit" />
+                            </p>
                         </div>
                         <div className="dashboardList__item__info__metadatas">
                             <h3 className="dashboardList__item__info__metadatas__title">guardado</h3>

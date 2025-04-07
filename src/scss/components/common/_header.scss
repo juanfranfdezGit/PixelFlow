@@ -97,6 +97,12 @@
     .search {
         padding-top: 20vh;
         padding-bottom: 15vh;
+
+        &__bar {
+            &.dashboard {
+                top: 10vh;
+            }
+        }
     }
 }
 

@@ -1,11 +1,12 @@
 import HeaderDash from "../components/common/headerDash"
+import DashboardList from "../components/dashboard/DashboardList"
 
 export default function Dashboard() {
     
     return (
         <>
             <HeaderDash></HeaderDash>
-            <h1>Dashboard</h1>
+            <DashboardList></DashboardList>
         </>
     )
 }

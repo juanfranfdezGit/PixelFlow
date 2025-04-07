@@ -1,8 +1,9 @@
 @use '_variables.scss' as *;
 @use '_mixin.scss' as *;
 @use './components/common/header';
+@use './components/common/modal';
 @use './components/home/imagesList';
-@use './components/home/modal';
+@use './components/dashboard/dashboard';
 
 * {
     margin: 0;
@@ -62,4 +63,5 @@ button {
     @include fonts(20px, 500, 1.5rem, $black);
     background: $white;
     box-shadow: 0 0 15px $shadows;
+    border: 1px solid $black;
 }

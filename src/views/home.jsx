@@ -1,6 +1,6 @@
 import Header from "../components/common/header"
+import Modal from "../components/common/modal"
 import ImagesList from "../components/home/imagesList"
-import Modal from "../components/home/modal"
 import { useState } from "react";
 
 export default function Home() {

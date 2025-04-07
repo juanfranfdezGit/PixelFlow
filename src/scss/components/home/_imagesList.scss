@@ -8,7 +8,7 @@
 
     &__container {
         position: relative;
-        columns: 2 30vw;
+        columns: 2;
         column-gap: 10px;
 
         &__imgs {
@@ -16,6 +16,29 @@
             margin-bottom: 5px;
             border-radius: 12px;
             box-shadow: 0 0 4px $shadows;
+        }
+    }
+}
+
+@media (min-width: 500px) {
+    .images {
+        &__container {
+            columns: 3;
+        }
+    }
+}  
+
+@media (min-width: 1200px) {
+    .images {
+        width: 95vw;
+    
+        &__container {
+            columns: 4;
+            column-gap: 20px;
+    
+            &__imgs {
+                margin-bottom: 15px;
+            }
         }
     }
 }

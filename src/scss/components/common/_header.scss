@@ -92,3 +92,18 @@
         }
     }
 }
+
+@media (min-width: 500px) {
+    .search {
+        padding-top: 20vh;
+        padding-bottom: 15vh;
+    }
+}
+
+@media (min-width: 1200px) {
+    .search {
+        &__bar {
+            width: 40vw;
+        }
+    }
+}

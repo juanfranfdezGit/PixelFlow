@@ -45,7 +45,8 @@
         }
 
         &__close {
-            @include fonts(1.7rem, 700, 1.5rem,$black)
+            @include fonts(1.7rem, 700, 1.5rem,$black);
+            cursor: pointer;
         }
     }
 
@@ -56,6 +57,7 @@
         padding: .5rem 1rem 1rem 1rem;
         @include set-flex(center, flex-start, column);
         transition: all 1s;
+        width: 100%;
 
         &.allow {
             bottom: 0;
@@ -88,6 +90,34 @@
                 width: 36px;
                 margin-left: 4px;
                 filter: invert(1);
+            }
+        }
+    }
+}
+
+@media (min-width: 500px) {
+    .modal {
+        padding: 2rem;
+    
+        &__bottom {
+            bottom: -120px;
+    
+            &__description {
+                @include fonts(1.4rem, 400, 1.8rem, $white);
+                margin: 1rem auto;
+                text-align: center;
+            }
+    
+            &__actions {
+                @include set-flex(center, center, row);
+                margin: 10px auto;
+                gap: 12px;
+    
+                img {
+                    width: 36px;
+                    margin-left: 4px;
+                    filter: invert(1);
+                }
             }
         }
     }

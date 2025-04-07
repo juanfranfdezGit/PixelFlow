@@ -58,6 +58,7 @@ input:focus {
 }
 
 button {
+    cursor: pointer;
     padding: 4px 20px;
     border-radius: 24px;
     @include fonts(20px, 500, 1.5rem, $black);

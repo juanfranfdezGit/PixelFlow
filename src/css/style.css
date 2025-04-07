@@ -144,6 +144,7 @@
   font-weight: 700;
   line-height: 1.5rem;
   color: #111;
+  cursor: pointer;
 }
 .modal__bottom {
   position: absolute;
@@ -155,6 +156,7 @@
   align-items: flex-start;
   flex-direction: column;
   transition: all 1s;
+  width: 100%;
 }
 .modal__bottom.allow {
   bottom: 0;
@@ -191,6 +193,35 @@
   filter: invert(1);
 }
 
+@media (min-width: 500px) {
+  .modal {
+    padding: 2rem;
+  }
+  .modal__bottom {
+    bottom: -120px;
+  }
+  .modal__bottom__description {
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.8rem;
+    color: #fdfdfd;
+    margin: 1rem auto;
+    text-align: center;
+  }
+  .modal__bottom__actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin: 10px auto;
+    gap: 12px;
+  }
+  .modal__bottom__actions img {
+    width: 36px;
+    margin-left: 4px;
+    filter: invert(1);
+  }
+}
 .images {
   width: 90vw;
   margin: 0 auto;
@@ -206,6 +237,7 @@
   margin-bottom: 5px;
   border-radius: 12px;
   box-shadow: 0 0 4px rgba(17, 17, 17, 0.6509803922);
+  cursor: pointer;
 }
 
 @media (min-width: 500px) {
@@ -267,6 +299,7 @@
 .dashboardList__item__image__overlay__ico {
   width: 32px;
   filter: invert(1);
+  cursor: pointer;
 }
 .dashboardList__item__info {
   display: flex;
@@ -371,6 +404,7 @@ input:focus {
 }
 
 button {
+  cursor: pointer;
   padding: 4px 20px;
   border-radius: 24px;
   font-size: 20px;

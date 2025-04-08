@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export default function ImagesList({ setActive }) {
+export default function ImagesList({ setActive, keyword }) {
 
     const BASE_URL = import.meta.env.VITE_BASE_URL;
     const API_KEY = import.meta.env.VITE_API_KEY;
@@ -8,14 +8,19 @@ export default function ImagesList({ setActive }) {
     const [ data, setData ] = useState([]);
 
     useEffect(() => {
-        fetch(`${BASE_URL}/photos?client_id=${API_KEY}`)
+        const url = keyword.trim()
+        ? `https://api.unsplash.com/search/photos?page=1&query=${keyword}&per_page=20&client_id=${API_KEY}`
+        : `${BASE_URL}/photos?client_id=${API_KEY}&per_page=20`;
+
+
+        fetch(url)
         .then((response) => response.json())
         .then((json) => {
-            setData(json);
-            console.log("datos recubidos:", json)
-        })
+            const results = json.results || json; 
+            setData(results);
+          })
         .catch((error) => console.error("Error al obtener datos:", error));
-    }, [BASE_URL, API_KEY])
+    }, [keyword, BASE_URL, API_KEY])
 
     function handleImageClick() {
         setActive(true);

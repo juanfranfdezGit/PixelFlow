@@ -9,16 +9,14 @@
 
     &__logo {
         color: $white;
-
-        &.dashboard {
-            color: $black;
-        }
+        cursor: pointer;
     }
 
     &.dashboard {
         background: $white;
-        padding: 2rem 2rem 6rem 2rem;
+        padding: 4rem 2rem 12rem 2rem;
         box-shadow: 0 0 15px $shadows;
+        background: url(/assets/images/headerBack.jfif) center center / cover no-repeat;
     }
 }
 
@@ -67,7 +65,7 @@
 
         &.dashboard {
             position: absolute;
-            top: 15vh;
+            top: 150px;
             width: 85vw;
         }
     }
@@ -100,7 +98,7 @@
 
         &__bar {
             &.dashboard {
-                top: 10vh;
+                top: 15vh;
             }
         }
     }

@@ -6,13 +6,13 @@ import { useState } from "react";
 export default function Home() {
 
     const [active, setActive] = useState(false);
-    const [ keyword, setKeyword ] = useState("")
+    const [selected, setSelected] = useState(null);
 
     return (
         <>
-            <Header keyword={keyword} setKeyword={setKeyword} />
-            <ImagesList setActive={setActive} keyword={keyword} />
-            <Modal active={active} setActive={setActive} />
+            <Header />
+            <ImagesList setActive={setActive} setSelected={setSelected} />
+            <Modal active={active} setActive={setActive} item={selected} />
         </>
     )
 }

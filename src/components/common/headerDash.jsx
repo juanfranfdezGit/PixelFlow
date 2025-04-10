@@ -7,7 +7,7 @@ export default function HeaderDash() {
     return (
         <>
             <nav className="navMenu dashboard">
-                <h1 className="navMenu__logo dashboard">PixelFlow</h1>
+                <h1 className="navMenu__logo dashboard" onClick={() => Navigate('/')}>PixelFlow</h1>
                 <button className="navMenu__button" onClick={() => Navigate('/')}>Volver</button>
 
                 <form className="search__bar dashboard" action="">

@@ -23,11 +23,20 @@
     left: 5vw;
     width: 90vw;
     height: 90vh;
-    background: url(/assets/images/photo2.webp) center center / cover no-repeat;
     z-index: 5;
     border-radius: 12px;
     padding: 1rem;
     overflow: hidden;
+    background: $white;
+
+    &__backImg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        object-fit: contain;
+    }
 
     &.active {
         display: block;
@@ -47,21 +56,22 @@
         &__close {
             @include fonts(1.7rem, 700, 1.5rem,$black);
             cursor: pointer;
+            z-index: 10;
         }
     }
 
     &__bottom {
         position: absolute;
-        bottom: -150px;
+        bottom: -120px;
         left: 0;
         padding: .5rem 1rem 1rem 1rem;
         @include set-flex(center, flex-start, column);
         transition: all 1s;
         width: 100%;
+        background: $shadows;
 
         &.allow {
             bottom: 0;
-            background: $shadows;
         }
 
         &__arrow {
@@ -69,6 +79,7 @@
             filter: invert(1);
             margin: 0 auto;
             transition: all 1s;
+            cursor: pointer;
 
             &.allow {
                 transform: rotate(180deg)
@@ -78,18 +89,33 @@
         &__description {
             @include fonts(1.2rem, 400, 1.8rem, $white);
             margin-bottom: 1rem;
-            text-align: center
+            text-align: center;
+            opacity: 0;
+            transition: all .5s;
+
+            &.allow {
+                opacity: 1;
+            }
         }
 
         &__actions {
             @include set-flex(center, center, row);
             margin: 10px auto;
             gap: 12px;
+            z-index: 10;
+            cursor: pointer;
 
             img {
                 width: 36px;
                 margin-left: 4px;
                 filter: invert(1);
+            }
+
+            &__saved {
+                @include fonts(1.2rem, 400, 1.8rem, $accept);
+                color: green;
+                text-align: center;
+                margin: 0 auto;
             }
         }
     }

@@ -7,6 +7,7 @@ export default function ImagesList() {
     const [localPhotos, setLocalPhotos] = useState([]);
     const [editing, setEditing] = useState({});
     const [description, setDescription] = useState({});
+    const [order, setOrder] = useState(false);
 
     const dispatch = useDispatch();
 
@@ -51,6 +52,26 @@ export default function ImagesList() {
           setEditing(prev => ({ ...prev, [photoID]: false }));
     }
 
+    const allowOrder = () => {
+        setOrder(!order)
+    }
+
+    const handleOrder = (type) => {
+        const sortedPhotos = [...localPhotos].sort((a, b) => {
+            if (type === "fecha") {
+                return new Date(b.savedAt) - new Date(a.savedAt);
+            } else if (type === "width") {
+                return b.width - a.width;
+            } else if (type === "height") {
+                return b.height - a.height;
+            }
+            return 0;
+        });
+    
+        setLocalPhotos(sortedPhotos);
+        setOrder(false); 
+    };
+
     if (!localPhotos || !Array.isArray(localPhotos)) {
         return <p>No hay fotos guardadas</p>;
     }
@@ -59,7 +80,12 @@ export default function ImagesList() {
         <>
             <main className="dashboardList">
                 <div className="dashboardList__actions">
-                    <button>Ordenar</button>
+                    <button onClick={allowOrder}>Ordenar</button>
+                    <ul className={`dashboardList__actions__order ${order ? "allow" : "disallow"}`}>
+                        <li onClick={() => handleOrder("fecha")}>Fecha</li>
+                        <li onClick={() => handleOrder("width")}>Width</li>
+                        <li onClick={() => handleOrder("height")}>Height</li>
+                    </ul>
                     <button onClick={handleRemoveAll}>Borrar Todo</button>
                 </div>
 
@@ -71,7 +97,12 @@ export default function ImagesList() {
                         <div className="dashboardList__item__image">
                             <img className="dashboardList__item__image__img" src={photo.urls.full} alt={photo.user.name} />
                             <div className="dashboardList__item__image__overlay">
-                                <img className="dashboardList__item__image__overlay__ico" onClick={() => handleRemove(photo.id)} src="/assets/icos/delete.svg" alt="delete" />
+                                <img 
+                                className="dashboardList__item__image__overlay__ico" 
+                                onClick={() => handleRemove(photo.id)} 
+                                src="/assets/icos/delete.svg" 
+                                alt="delete" 
+                                />
                             </div>
                         </div>
                         <div className="dashboardList__item__info">
@@ -91,7 +122,7 @@ export default function ImagesList() {
                                     }
                                 }}
                                 autoFocus
-                                ></textarea>
+                                />
                                 : 
                                 <p className="dashboardList__item__info__description__desc">{photo.description ? photo.description : "descripción no disponible"}
                                 <img src="/assets/icos/edit.svg" alt="edit" onClick={() => setEditing({ ...editing, [photo.id]: true })} />

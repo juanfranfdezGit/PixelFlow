@@ -21,12 +21,16 @@ const searchSlice = createSlice({
     initialState: {
         keyword: "",
         results: [],
+        page: 1,
         loading: false,
         error: null
     },
     reducers: {
         setKeyword: (state, action) => {
             state.keyword = action.payload;
+        },
+        setPage: (state, action) => {
+            state.page = action.payload;
         }
     },
     extraReducers: (builder) => {

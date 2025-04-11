@@ -5,14 +5,20 @@ const API_KEY = import.meta.env.VITE_API_KEY;
 
 export const fetchImages = createAsyncThunk (
     "images/fetchImages",
-    async (keyword) => {
+    async ({keyword, page}) => {
       const url = keyword.trim()
-        ? `https://api.unsplash.com/search/photos?page=1&query=${keyword}&per_page=20&client_id=${API_KEY}`
-        : `${BASE_URL}/photos?client_id=${API_KEY}&per_page=20`;
+        ? `${BASE_URL}/search/photos?page=${page}&query=${keyword}&per_page=20&client_id=${API_KEY}`
+        : `${BASE_URL}/photos?page=${page}&per_page=20&client_id=${API_KEY}`;
   
       const response = await fetch(url);
       const data = await response.json();
-      return data.results || data;
+
+      const images = keyword.trim() ? data.results : data;
+
+      return {
+        images,
+        page,
+      }
     }
 );
 
@@ -40,7 +46,13 @@ const searchSlice = createSlice({
             state.error = null;
         })
         .addCase(fetchImages.fulfilled, (state, action) => {
-            state.results = action.payload;
+            const { images, page } = action.payload;
+            state.page = page;
+            if (page === 1) {
+              state.results = images;
+            } else {
+              state.results = [...state.results, ...images];
+            }
             state.loading = false;
         })
         .addCase(fetchImages.rejected, (state, action) => {
@@ -50,5 +62,5 @@ const searchSlice = createSlice({
     }
 });
 
-export const { setKeyword } = searchSlice.actions;
+export const { setKeyword, setPage } = searchSlice.actions;
 export default searchSlice.reducer;

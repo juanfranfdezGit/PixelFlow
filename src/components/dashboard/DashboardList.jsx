@@ -64,6 +64,8 @@ export default function ImagesList() {
                 return b.width - a.width;
             } else if (type === "height") {
                 return b.height - a.height;
+            } else if (type === "likes") {
+                return b.likes - a.likes;
             }
             return 0;
         });
@@ -85,6 +87,7 @@ export default function ImagesList() {
                         <li onClick={() => handleOrder("fecha")}>Fecha</li>
                         <li onClick={() => handleOrder("width")}>Width</li>
                         <li onClick={() => handleOrder("height")}>Height</li>
+                        <li onClick={() => handleOrder("likes")}>Likes</li>
                     </ul>
                     <button onClick={handleRemoveAll}>Borrar Todo</button>
                 </div>
@@ -140,6 +143,10 @@ export default function ImagesList() {
                             <div className="dashboardList__item__info__metadatas">
                                 <h3 className="dashboardList__item__info__metadatas__title">height</h3>
                                 <p className="dashboardList__item__info__metadatas__description">{photo.height}px</p>
+                            </div>
+                            <div className="dashboardList__item__info__metadatas">
+                                <h3 className="dashboardList__item__info__metadatas__title">Likes</h3>
+                                <p className="dashboardList__item__info__metadatas__description">{photo.likes}</p>
                             </div>
                         </div>
                     </div>
